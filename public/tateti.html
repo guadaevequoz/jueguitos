@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>jueguitos</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/rooms.css" rel="stylesheet">
+    <link rel="icon" href="./img/favicon.gif" type="image/gif">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./js/tatetiP.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#nav-placeholder").load("nav.html");
+        });
+    </script>
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    <form id="formCreateRoom" class="hidden" href="#">
+        <fieldset>
+            <legend>Crear/Unirse a una Sala</legend>
+            <input id="roomName" type="text" placeholder="Nombre de la Sala" required>
+            <input type="submit" value="Crear/Unirse"></input>
+        </fieldset>
+    </form>
+    <div class="back">
+        <div align="center" class="gameBoard">
+            <h3><p id="board">Jugando en el tablero: </p></h3>
+            <p>
+                <span id="msg"></span>
+            </p>
+            <span id="turn"></span>
+            <p id="win"></p>
+            <table>
+                <tr>
+                    <td id="pos00"></td>
+                    <td id="pos01"></td>
+                    <td id="pos02"></td>
+                </tr>
+                <tr>
+                    <td id="pos10"></td>
+                    <td id="pos11"></td>
+                    <td id="pos12"></td>
+                </tr>
+                <tr>
+                    <td id="pos20"></td>
+                    <td id="pos21"></td>
+                    <td id="pos22"></td>
+                </tr>
+            </table>
+            <p id="error"></p>
+            <button id="back" class="btn btn-primary">Volver a la página principal</button>
+        </div>
+    </div>
+    <div class="blurry hidden"></div>
+
+</body>
+
+</html>

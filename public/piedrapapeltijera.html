@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>jueguitos</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/rooms.css" rel="stylesheet">
+    <link rel="icon" href="./img/favicon.gif" type="image/gif">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="text/javascript" src="./js/piedrapapeltijeraP.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("nav.html");
+        });
+    </script>
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    <form id="formCreateRoom" class="hidden" href="#">
+        <fieldset>
+            <legend>Crear/Unirse a una Sala</legend>
+            <input id="roomName" type="text" placeholder="Nombre de la Sala" required>
+            <input type="submit" value="Crear/Unirse"></input>
+        </fieldset>
+    </form>
+    <div class="back">
+        <div align="center" class="gameBoard">
+            <h3><p id="board">Jugando en el tablero: </p></h3>
+            <div>
+                <br>
+                <button id="rock" type="button" class="btn btn-outline-secondary"><img
+                        src="img/choice/rock.png"></button>
+                <button id="paper" type="button" class="btn btn-outline-dark"><img src="img/choice/paper.png"></button>
+                <button id="scissor" type="button" class="btn btn-outline-info"><img
+                        src="img/choice/scissor.png"></button>
+                <button id="lizard" type="button" class="btn btn-outline-success"><img
+                        src="img/choice/lizard.png"></button>
+                <button id="spock" type="button" class="btn btn-outline-primary"><img
+                        src="img/choice/spock.png"></button>
+            </div>
+            <br>
+            <div id="timer">Esperando...</div>
+            <div>
+                <br>
+                Elegiste:
+                <p id="yourChoice"></p>
+            </div>
+            <div>
+                El enemigo eligió:
+                <p id="otherChoice"></p>
+            </div>
+            <div id="counter">
+                <span id="counter-wins">0</span>
+                <span>/</span>
+                <span id="counter-lose">0</span>
+            </div>
+            <div id="win"></div>
+
+            <p id="error"></p>
+            <button id="back" class="btn btn-primary">Volver Atras</button>
+        </div>
+    </div>
+    <div class="blurry hidden"></div>
+</body>
+
+</html>

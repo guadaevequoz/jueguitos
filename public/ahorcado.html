@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>jueguitos</title>
+    <script src="./js/ahorcadoP.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/rooms.css" rel="stylesheet">
+    <link rel="icon" href="./img/favicon.gif" type="image/gif">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("nav.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    <div class="back">
+        <div align="center" class="gameBoard">
+            <img id="drawing" src="./img/state/5.png" width="30%">
+            <input id="letter" type="text" maxlength="1" required>
+            <button id="btnCheck">Comprobar</button>
+            <div id="result"></div>
+            <h2>Intentos</h2>
+            <div id="tries"></div>
+            <h2>Historial</h2>
+            <div id="record"></div>
+            <div id="error"></div>
+            <div id="status"></div>
+            <button id="btnPlayAgain" style="display:none;" class="btn btn-primary">Jugar de nuevo</button>
+        </div>
+    </div>
+</body>
+
+</html>
